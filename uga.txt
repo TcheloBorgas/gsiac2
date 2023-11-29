@@ -1,0 +1,24 @@
+
+
+ARM_CLIENT_ID  a9607cfe-d008-4bdc-8a54-c4612e0b7f54
+ARM_CLIENT_SECRET   QHI8Q~NWQI5eb_EGTE.cC1MtWXC9rsbfODR.naaC
+ARM_TENANT_ID  7f449cdd-5132-4ce9-a23a-824c5ffd7527
+ARM_SUBSCRIPTION_ID  22cb88f4-97b8-456c-8117-b2ec7abda191
+
+
+
+az account list --query "[?user.name=='pythonmhb@gmail.com'].{Name:name, ID:id, Default:isDefault}" --output Table
+
+
+22cb88f4-97b8-456c-8117-b2ec7abda191
+
+az ad sp create-for-rbac --name gs-iac --role Contributor --scopes /subscriptions/22cb88f4-97b8-456c-8117-b2ec7abda191
+
+
+{
+  "appId": "a9607cfe-d008-4bdc-8a54-c4612e0b7f54",
+  "displayName": "gs-iac",
+  "password": "QHI8Q~NWQI5eb_EGTE.cC1MtWXC9rsbfODR.naaC",
+  "tenant": "7f449cdd-5132-4ce9-a23a-824c5ffd7527"
+}
+
