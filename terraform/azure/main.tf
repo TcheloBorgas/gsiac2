@@ -52,7 +52,7 @@ resource "random_string" "random_suffix" {
   length  = 12
   special = false
   upper   = false
-  number  = false
+  numeric  = false
 }
 
 # Blobs para o site estático
