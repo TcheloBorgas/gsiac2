@@ -40,7 +40,7 @@ resource "aws_route_table_association" "web-2" {
 }
 
 resource "aws_security_group" "web-1" {
-  name        = "net"
+  name        = "web"
   description = "Allow web inbound traffic"
   vpc_id      = aws_vpc.web.id
 
@@ -60,7 +60,7 @@ resource "aws_security_group" "web-1" {
   }
 }
 resource "aws_security_group" "web-2" {
-  name        = "net2"
+  name        = "webb"
   description = "Allow web inbound traffic"
   vpc_id      = aws_vpc.web.id
 
@@ -131,11 +131,11 @@ resource "aws_instance" "web-2" {
               yum install -y httpd
               systemctl start httpd
               systemctl enable httpd
-              echo '<h1>Uga, uga funciona</h1>' | tee /var/www/html/index.html
+              echo '<h1>Uga, uga</h1>' | tee /var/www/html/index.html
               EOF
 
   tags = {
-    Name = "net"
+    Name = "web"
   }
 }
 resource "aws_instance" "web-3" {
@@ -156,7 +156,7 @@ resource "aws_instance" "web-3" {
               EOF
 
   tags = {
-    Name = "net"
+    Name = "web"
   }
 }
 resource "aws_instance" "web-4" {
@@ -177,7 +177,7 @@ resource "aws_instance" "web-4" {
               EOF
 
   tags = {
-    Name = "net"
+    Name = "web"
   }
 }
 
