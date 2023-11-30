@@ -5,7 +5,7 @@ provider "azurerm" {
 
 # Grupo de Recursos
 resource "azurerm_resource_group" "rg_staticsite" {
-  name     = "GS-IaC"
+  name     = "GS-IaC2"
   location = "eastus"
 }
 
