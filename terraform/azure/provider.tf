@@ -12,8 +12,7 @@ terraform {
     key                  = "terraform.tchelo"
   }
 }
-
-
+#a
 
 provider "azurerm" {
   features {}
