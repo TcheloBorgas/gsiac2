@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "GS-IaC"
+    resource_group_name  = "GS-IaC2"
     storage_account_name = "memoriaz"
     container_name       = "tchelo"
     key                  = "terraform.tchelo"
