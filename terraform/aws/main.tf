@@ -109,7 +109,7 @@ resource "aws_instance" "web-1" {
               yum install -y httpd
               systemctl start httpd
               systemctl enable httpd
-              echo '<h1>Vai Palmeiras Kledinho é</h1>' | tee /var/www/html/index.html
+              echo '<h1>Uga funciona</h1>' | tee /var/www/html/index.html
               EOF
 
   tags = {
@@ -131,7 +131,7 @@ resource "aws_instance" "web-2" {
               yum install -y httpd
               systemctl start httpd
               systemctl enable httpd
-              echo '<h1>Página HTML própria do hike1</h1>' | tee /var/www/html/index.html
+              echo '<h1>Uga, uga funciona</h1>' | tee /var/www/html/index.html
               EOF
 
   tags = {
