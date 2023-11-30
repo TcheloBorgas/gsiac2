@@ -40,7 +40,7 @@ resource "aws_route_table_association" "web-2" {
 }
 
 resource "aws_security_group" "web-1" {
-  name        = "web"
+  name        = "net"
   description = "Allow web inbound traffic"
   vpc_id      = aws_vpc.web.id
 
@@ -60,7 +60,7 @@ resource "aws_security_group" "web-1" {
   }
 }
 resource "aws_security_group" "web-2" {
-  name        = "webb"
+  name        = "net2"
   description = "Allow web inbound traffic"
   vpc_id      = aws_vpc.web.id
 
@@ -135,7 +135,7 @@ resource "aws_instance" "web-2" {
               EOF
 
   tags = {
-    Name = "web"
+    Name = "net"
   }
 }
 resource "aws_instance" "web-3" {
@@ -156,7 +156,7 @@ resource "aws_instance" "web-3" {
               EOF
 
   tags = {
-    Name = "web"
+    Name = "net"
   }
 }
 resource "aws_instance" "web-4" {
@@ -177,7 +177,7 @@ resource "aws_instance" "web-4" {
               EOF
 
   tags = {
-    Name = "web"
+    Name = "net"
   }
 }
 
