@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "rg-staticsite" {
+resource "azurerm_resource_group" "rg-GS" {
   provider = azurerm.cloud
   name     = "GS-IaC"
   location = "eastus"
