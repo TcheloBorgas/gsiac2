@@ -17,7 +17,7 @@ terraform {
   backend "s3" {
     bucket         = "bucketdecria"
     key            = "terraform.tfstate"
-    dynamodb_table = "dynamodecria"
+    dynamodb_table = "dyanmodbgs"
     
     region         = "us-east-1"
   }
