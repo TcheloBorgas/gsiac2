@@ -60,7 +60,7 @@ resource "aws_lb_target_group_attachment" "net-4" {
   port             = 80
 }
 
-
+#a
 resource "aws_security_group" "net" {
   name        = "net"
   description = "SALLES GS SUB"
