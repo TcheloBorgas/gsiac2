@@ -152,7 +152,7 @@ resource "aws_instance" "web-3" {
               yum install -y httpd
               systemctl start httpd
               systemctl enable httpd
-              echo '<h1>Página HTML própria do hike2</h1>' | tee /var/www/html/index.html
+              echo '<h1>Chega, por favor</h1>' | tee /var/www/html/index.html
               EOF
 
   tags = {
@@ -168,23 +168,12 @@ resource "aws_instance" "web-4" {
   vpc_security_group_ids      = [aws_security_group.web-2.id]
 
   user_data = <<-EOF
-              #!/bin/bash  
-echo "Update with latest packages"
-yum update -y
-    
-echo "Install Apache"
-yum install -y httpd git
-    
-echo "Enable Apache service to start after reboot"
-sudo systemctl enable httpd
-    
-echo "Install application"
-cd /tmp
-git clone https://github.com/TcheloBorgas/GS-IaC/
-cp /tmp/GS-IAC/app/*.html /var/www/html/
-    
-echo "Start Apache service"
-service httpd restart
+              #!/bin/bash
+              yum update -y
+              yum install -y httpd
+              systemctl start httpd
+              systemctl enable httpd
+              echo '<h1>Chega, por favor, ja deu de GS</h1>' | tee /var/www/html/index.html
               EOF
 
   tags = {
