@@ -18,6 +18,9 @@ resource "aws_subnet" "net-2" {
 }
 
 
+
+#
+
 resource "aws_internet_gateway" "net" {
   vpc_id = aws_vpc.net.id
 }
