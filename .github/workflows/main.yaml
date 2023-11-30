@@ -37,20 +37,20 @@ jobs:
 
 
     - name: Step 05 - Terraform Init
-      run : terraform -chdir=./terraform/AWS init -input=false
+      run : terraform -chdir=./terraform/aws init -input=false
 
     - name: Step 06 - Terraform Validate
-      run : terraform -chdir=./terraform/AWS validate
+      run : terraform -chdir=./terraform/aws validate
 
     - name: Step 07 - Terraform Plan
-      run : terraform -chdir=./terraform/AWS plan -input=false -out tfplan
-      # run : terraform -chdir=./terraform/AWS plan -input=false -destroy -out tfplan
+      run : terraform -chdir=./terraform/aws plan -input=false -out tfplan
+      # run : terraform -chdir=./terraform/aws plan -input=false -destroy -out tfplan
 
     - name: Step 08 - Terraform Apply
-      run : terraform -chdir=./terraform/AWS apply -auto-approve -input=false tfplan
+      run : terraform -chdir=./terraform/aws apply -auto-approve -input=false tfplan
 
     - name: Step 09 - Terraform Show
-      run : terraform -chdir=./terraform/AWS show
+      run : terraform -chdir=./terraform/aws show
 
   on-Azure:
     name: Azure provider
@@ -80,19 +80,17 @@ jobs:
         creds: '{"clientId":"${{ secrets.ARM_CLIENT_ID }}","clientSecret":"${{ secrets.ARM_CLIENT_SECRET }}","subscriptionId":"${{ secrets.ARM_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.ARM_TENANT_ID }}"}'
 
     - name: Step 05 - Terraform Init
-      run : terraform -chdir=./terraform/Azure init -input=false
+      run : terraform -chdir=./terraform/azure init -input=false
 
     - name: Step 06 - Terraform Validate
-      run : terraform -chdir=./terraform/Azure validate
+      run : terraform -chdir=./terraform/azure validate
 
     - name: Step 07 - Terraform Plan
-      run : terraform -chdir=./terraform/Azure plan -input=false -out tfplan
+      run : terraform -chdir=./terraform/azure plan -input=false -out tfplan
       # run : terraform -chdir=./terraform/Azure plan -input=false -destroy -out tfplan
 
     - name: Step 08 - Terraform Apply
-      run : terraform -chdir=./terraform/Azure apply -auto-approve -input=false tfplan
+      run : terraform -chdir=./terraform/azure apply -auto-approve -input=false tfplan
 
     - name: Step 09 - Terraform Show
-      run : terraform -chdir=./terraform/Azure show
-
-# v
+      run : terraform -chdir=./terraform/azure show
